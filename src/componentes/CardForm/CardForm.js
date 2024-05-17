@@ -1,46 +1,41 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
-import Button from '@mui/material/Button';
-
+import './CardForm.css';
 
 function CardForm(){
     return (
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-        <Card sx={{ width: 500}} >
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                        To Do List
-                </Typography>
-                <Paper
-                    component="form"
-                    sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 450 }}
-                    >
-                    
-                    <InputBase
-                        sx={{ ml: 1, flex: 1 }}
-                        placeholder="Informe uma tarefa"
-                        inputProps={{ 'aria-label': 'Informe uma tarefa' }}
-                    />
-                    <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-                    {/* <IconButton color="primary" sx={{ p: '2px' }} aria-label="directions">
-                        <DirectionsIcon />
-                        Add
-                    </IconButton> */}
-                    <Button size="small"> <strong>Add</strong> </Button>
-                </Paper>
-            </CardContent>
-        </Card>
+        < div id="main" class="d-flex justify-content-center align-items-center">
+            <div class="card" style={{width: '30rem'}}>
+                <div class="card-body">
+                    {/* <h5 class="card-title">Wellcome</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Your list task</h6> */}
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" 
+                        placeholder="Informe uma tarefa" 
+                        aria-label="Recipient's username" 
+                        aria-describedby="button-addon2" />
+                        <button class="btn btn-primary" type="button" id="button-addon2">Add</button>
+                    </div> 
+                    <div className='row'>
+                        <div className='col-md-3'>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Urgente
+                            </label>
+                            </div>
+                        </div>
+                        <div className='col-md-3'>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked /> 
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Normal
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        
       );
 }
 
