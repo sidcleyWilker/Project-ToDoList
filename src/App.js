@@ -1,27 +1,22 @@
+import { useState } from 'react';
 import './App.css';
 import Banner from './componentes/Banner/Banner';
 import CardForm from './componentes/CardForm/CardForm';
-import TextField from '@mui/material/TextField';
+import ListagemTask from './componentes/ListagemTask/ListagemTask';
+
 
 function App() {
+  const [tarefas, setTarefas] = useState([]);
+  
+  const novaTarefaCadastrado = (tarefa) =>{
+    setTarefas([...tarefas,tarefa])
+  }
+
   return (
     <div className="App">
-      {/* <header className="App-header">
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      />
-      </header> */}
-
       <Banner/>
-      <CardForm/>
-
-
+      <CardForm TarefaCadastrado={tarefa => novaTarefaCadastrado(tarefa)}/>
+      <ListagemTask tarefas={tarefas}/>
     </div>
   );
 }
