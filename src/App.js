@@ -6,7 +6,28 @@ import ListagemTask from './componentes/ListagemTask/ListagemTask';
 
 
 function App() {
-  const [tarefas, setTarefas] = useState([]);
+  const taf = [
+    {
+      id: '123', 
+      nome: "tafe01",
+      tipo: "I",
+      dataCadastro: new Date()
+    },
+    {
+      id: '12345', 
+      nome: "tafe02",
+      tipo: "P",
+      dataCadastro: new Date()
+    },
+    {
+      id: '12367', 
+      nome: "tafe03",
+      tipo: "U",
+      dataCadastro: new Date()
+    }
+
+  ]
+  const [tarefas, setTarefas] = useState(taf);
   
   const novaTarefaCadastrado = (tarefa) =>{
     setTarefas([...tarefas,tarefa])

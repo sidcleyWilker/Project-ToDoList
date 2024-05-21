@@ -6,10 +6,10 @@ function CardForm(props){
 
     // const [tarefas, setTarefas] = useState([]);
     const [nomeTarefa, setNomeTarefa] = useState('');
-    const [tipoTarefa, setTipoTarefa] = useState('Importante');
+    const [tipoTarefa, setTipoTarefa] = useState('I');
 
     const handleClickAddTarefa = () => {
-        const dataCadastro = new Date().toLocaleString();
+        const dataCadastro = new Date();
 
         const novaTarefa = {
             id: uuidv4(), 
@@ -22,7 +22,7 @@ function CardForm(props){
 
 
         setNomeTarefa('');
-        setTipoTarefa('Importante');
+        setTipoTarefa('I');
       };
 
     return (
@@ -45,8 +45,8 @@ function CardForm(props){
                                 type="radio" 
                                 name="radioPrioridade" 
                                 id="radio1"
-                                checked={tipoTarefa === 'Importante'} 
-                                onChange={() => setTipoTarefa('Importante')}/> 
+                                checked={tipoTarefa === 'I'} 
+                                onChange={() => setTipoTarefa('I')}/> 
                                 <label className="form-check-label" htmlFor="radio1">
                                     Importante
                                 </label>
@@ -60,8 +60,8 @@ function CardForm(props){
                                 type="radio" 
                                 name="radioPrioridade" 
                                 id="radio2"  
-                                checked={tipoTarefa === 'Priotário'} 
-                                onChange={() => setTipoTarefa('Priotário')}/> 
+                                checked={tipoTarefa === 'P'} 
+                                onChange={() => setTipoTarefa('P')}/> 
                                 <label className="form-check-label" htmlFor="radio2">
                                     Priotário
                                 </label>
@@ -75,8 +75,8 @@ function CardForm(props){
                             type="radio" 
                             name="radioPrioridade" 
                             id="radio3" 
-                            checked={tipoTarefa === 'Urgente'} 
-                            onChange={() => setTipoTarefa('Urgente')}/>
+                            checked={tipoTarefa === 'U'} 
+                            onChange={() => setTipoTarefa('U')}/>
                             <label className="form-check-label" htmlFor="radio3">
                                 Urgente
                             </label>
