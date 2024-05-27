@@ -15,6 +15,7 @@ function CardForm(props){
             id: uuidv4(), 
             nome: nomeTarefa,
             tipo: tipoTarefa,
+            estado: "A FAZER",
             dataCadastro: dataCadastro
         };
 
