@@ -5,7 +5,7 @@ import Banner from './componentes/Banner/Banner';
 import CardForm from './componentes/CardForm/CardForm';
 import ListagemTask from './componentes/ListagemTask/ListagemTask';
 
-const taf = [
+const initialTaf = [
   {
     id: '123', 
     nome: "tafe01",
@@ -31,7 +31,14 @@ const taf = [
 ]
 
 function App() {
-  const [tarefas, setTarefas] = useState(taf);
+  const [tarefas, setTarefas] = useState(() => {
+    const savedTarefas = localStorage.getItem('tarefas');
+    return savedTarefas ? JSON.parse(savedTarefas) : initialTaf;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
+  }, [tarefas]);
   
   const novaTarefaCadastrado = (tarefa) =>{
     setTarefas([...tarefas,tarefa])
