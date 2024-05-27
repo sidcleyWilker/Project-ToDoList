@@ -1,5 +1,4 @@
-import {ThemeProvider, BaseStyles} from '@primer/react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Banner from './componentes/Banner/Banner';
 import CardForm from './componentes/CardForm/CardForm';
